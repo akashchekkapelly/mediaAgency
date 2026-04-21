@@ -43,14 +43,14 @@
         <div class="mil-preloader">
             <div class="mil-preloader-animation">
                 <div class="mil-pos-abs mil-animation-1">
-                    <p class="mil-h3 mil-muted mil-thin">Pioneering</p>
-                    <p class="mil-h3 mil-muted">Creative</p>
-                    <p class="mil-h3 mil-muted mil-thin">Excellence</p>
+                    <p class="mil-h3 mil-muted mil-thin">High</p>
+                    <p class="mil-h3 mil-muted">Level</p>
+                    <p class="mil-h3 mil-muted mil-thin">Focus</p>
                 </div>
                 <div class="mil-pos-abs mil-animation-2">
                     <div class="mil-reveal-frame">
                         <p class="mil-reveal-box"></p>
-                        <p class="mil-h3 mil-muted mil-thin"><span style="font-weight: bold;">HLF</span> Creative</p>
+                        <p class="mil-h3 mil-muted mil-thin custom-logo-font1"><span class="custom-logo-font" style="font-weight: bold;">HLF</span> Creative</p>
                     </div>
                 </div>
             </div>
@@ -190,7 +190,7 @@
         <!-- frame -->
         <div class="mil-frame">
             <div class="mil-frame-top">
-                <a href="index.html" class="mil-logo">HLF</a>
+                <a href="index.html" class="mil-logo" style="line-height: 50%;"><span class="custom-logo-font">HLF</span><br><span class="custom-logo-font1" style="font-size: 18px; margin-left: 2%;">CREATIVE</span></a>
                 <div class="mil-menu-btn">
                     <span></span>
                 </div>
@@ -694,33 +694,43 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-6">
-
+                            
                                 <a href="publication.html" class="mil-blog-card mil-mb-60">
-                                    <div class="mil-cover-frame mil-up">
-                                        <!-- <img src="img/blog/1.jpg" alt="cover"> -->
-                                        <iframe src="https://drive.google.com/file/d/1MNMqz0wRJ2D1CQj-x4eG4oqmgKpO1crM/preview" width="100%" height="100%"
-                                            allow="autoplay" allowfullscreen >
+                            
+                                    <div class="mil-cover-frame mil-up yt-hover-card" style="position:relative; overflow:hidden; height:320px;">
+                            
+                                        <iframe id="ytplayer1" width="100%" height="100%"
+                                            src="https://www.youtube.com/embed/7f5xbRPZMFY?enablejsapi=1&mute=1&controls=0&rel=0&modestbranding=1&playsinline=1"
+                                            frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="
+                                                position:absolute;
+                                                top:0;
+                                                left:0;
+                                                width:100%;
+                                                height:100%;
+                                                pointer-events:none;
+                                            ">
                                         </iframe>
+                            
                                     </div>
+                            
                                     <div class="mil-post-descr">
-                                        <!-- <div class="mil-labels mil-up mil-mb-30">
-                                            <div class="mil-label mil-upper mil-accent">TECHNOLOGY</div>
-                                            <div class="mil-label mil-upper">may 24 2023</div>
-                                        </div> -->
-                                        <h4 class="mil-up mil-mb-30">How to Become a Graphic Designer in 10 Simple Steps</h4>
-                                        <!-- <p class="mil-post-text mil-up mil-mb-30">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius sequi commodi dignissimos optio, beatae, eos necessitatibus nisi. Nam cupiditate consectetur nostrum qui! Repellat natus nulla, nisi aliquid, asperiores impedit tempora sequi est reprehenderit cumque explicabo, dicta. Rem nihil ullam totam ea voluptas quibusdam repudiandae id ut at iure! Totam, a!</p> -->
+                                        <h4 class="mil-up mil-mb-30">
+                                            16 Best Graphic Design Online and Offline Courses
+                                        </h4>
+                            
                                         <div class="mil-link mil-dark mil-arrow-place mil-up">
                                             <span>Read more</span>
                                         </div>
                                     </div>
+                            
                                 </a>
-
+                            
                             </div>
                             <div class="col-lg-6">
 
                                 <a href="publication.html" class="mil-blog-card mil-mb-60">
                                     <div class="mil-cover-frame mil-up">
-                                        <img src="img/blog/2.jpg" alt="cover">
+                                        <img src="https://drive.google.com/thumbnail?id=1YDw8Viu_pE_Ba3eLiX4Qjc4V2p1RAeyo&sz=w1000" alt="Image">
                                     </div>
                                     <div class="mil-post-descr">
                                         <!-- <div class="mil-labels mil-up mil-mb-30">
@@ -986,6 +996,35 @@
         <!-- content -->
     </div>
     <!-- wrapper end -->
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    
+    <script>
+        let player;
+
+        function onYouTubeIframeAPIReady() {
+
+            player = new YT.Player('ytplayer1', {
+                events: {
+                    onReady: function () {
+
+                        const card = document.querySelector('.yt-hover-card');
+
+                        card.addEventListener('mouseenter', function () {
+                            player.playVideo();
+                        });
+
+                        card.addEventListener('mouseleave', function () {
+                            player.pauseVideo();
+                            player.seekTo(0);
+                        });
+
+                    }
+                }
+            });
+
+        }
+    </script>
 
     <!-- jQuery js -->
     <script src="js/plugins/jquery.min.js"></script>
